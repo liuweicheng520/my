@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+<div>s
+    <h1>登录</h1>
+    <th:block th:if="${expired} != null">
+        <h1 th:text="${expired}" style="color: red">您的账号已在其他地方登录</h1>
+    </th:block>
+    <form  th:action="@{/login/verify}" method="post">
+        <p>账号：<input type="text" name="account"></p>
+        <p>密码：<input type="password" name="password"></p>
+        <p>记住我：<input type="checkbox" name="remember-me"></p>
+        <p><input type="submit" value="登录"></p>
+    </form>
+</div>
+</body>
+</html>

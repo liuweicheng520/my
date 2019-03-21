@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+    <meta charset="UTF-8">
+    <title>个人首页</title>
+</head>
+<body>
+<h1>用户名:<span sec:authentication="name"></span>&nbsp; 权限:<span sec:authentication="principal.authorities"></span></h1>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="登出">
+</form>
+<h1>登录成功! 欢迎您<span style="color: red">{${session.user.userName}}}</span></h1>
+</body>
+</html>
